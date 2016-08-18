@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body  {
+    background-image: url("../fotos/atacama_desierto.jpg");
+    background-size: 100% 100%;
+}
+</style>
+</head>
+<body>
+<% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+<% end %>
+
+<div class="container">
+	<div class="col-lg-4">
+		<div class="grey">
+			<h1>Iniciar Sesión</h1>
+			<%= form_tag sesiones_path do %>
+ 				<div class="field">
+ 					<%= label_tag :Email %><br/>
+ 					<%= text_field_tag :Email, params[:Email ]%>
+ 				</div>
+
+ 				<div class="field">
+ 					<%= label_tag :password %><br/>
+ 					<%= password_field_tag :password %>
+ 				</div>
+
+ 				<div class="actions">
+ 						<%= submit_tag "Iniciar Sesión" %>
+ 						<%= link_to 'regresar', root_url, class: 'btn btn-success' %> 
+ 				</div>			
+			<% end %>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
