@@ -24,11 +24,19 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
+#gema de fabrica, pero utilizada para la autenticacion de usuarios
 gem 'bcrypt', '~> 3.1.7'
+#gemas para titulo
+#gema para validacion de email
 gem 'email_validator'
+#gema para migracion de datos
 gem 'simple_form'
+#gema para errores de rails
 gem 'rails-footnotes', '~> 4.0'
+#gema para front end (bootstrap) de la aplicacion
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+#para la utilizacion de imagenes
+gem 'paperclip', '~> 5.1'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
