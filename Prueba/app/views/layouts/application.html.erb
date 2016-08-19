@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>ComandosQueHablan</title>
@@ -37,34 +37,20 @@
 					</div>					
 				</form> <!-- busqueda -->
             </div>
-            
-				<form action="" class="form-inline navbar-right" ><!-- login del usuario -->
-					<!-- <div class="form-group">
-						<label for="usuario" class="sr-only"> Usuario</label>
-						<input type="text" id="usuario" class="form-control input-sm" placeholder=" ingrese usuario">   usuario
-					</div>
-					<div class="form-group">
-						<label for="clave" class="sr-only"> clave</label>
-						<input type="text" id="clave" class="form-control input-sm" placeholder=" ingrese contraseña">  contraseña 
-					</div>
-					<div class="checkbox">
-						<label for=""><input type="checkbox">  recordar </label>
-					</div> -->
-
-
-					<% if current_user %>
-						sesión de <%= current_user.name %>
-						<%= link_to "Salir", logout_path("current"), method: "delete", class: 'btn btn-primary text-center' %>
-						<%= link_to "perfil", user_path, class: 'btn btn-primary text-center' %>
-					<% else %>
-						<%= link_to "ingresar", login_path, class: 'btn btn-primary text-center' %>
-						<%= link_to "Nuevo Usuario", signup_path,class: 'btn btn-primary text-center'  %> 
-					<% end %>
+ 			<form action="" class="form-inline navbar-right" ><!-- login del usuario -->
+ 				<% if current_user %>
+ 					sesión de <%= current_user.name %>
+					<%= link_to "Salir", logout_path("current"), method: "delete", class: 'btn btn-primary text-center' %>
+					<%= link_to "perfil", user_path, class: 'btn btn-primary text-center' %>
+				<% else %>
+					<%= link_to "ingresar", login_path, class: 'btn btn-primary text-center' %>
+					<%= link_to "Nuevo Usuario", signup_path,class: 'btn btn-primary text-center'  %> 
+				<% end %>
 					
-				</form> <!-- fin del login -->
+			</form> <!-- fin del login -->
 			
-			</div>			
-		</div>
+		</div>			
+
 	</div> <!-- fin de la barra de navegacion -->
 </header>	
 

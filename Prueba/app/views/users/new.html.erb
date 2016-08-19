@@ -16,7 +16,7 @@ body  {
 
 <div class="container" > 
 
-     <div class="col-lg-4">
+     <div class="col-sm-4">
          <div class="grey">
              <h1>Nuevo Usuario</h1>
              <%= form_for(@user) do |f| %>  
@@ -49,8 +49,8 @@ body  {
 				    <%= f.email_field :email %> 
 				  </div>
 				  <div class="actions">
-				    <%= f.submit "Registrarse" %>
-				    <%= link_to 'regresar', root_url, class: 'btn btn-success' %> 
+				    <%= f.submit "Registrarse",class: 'btn btn-success' %>
+				    <%= link_to 'regresar', root_url, class: 'btn btn-danger' %> 
 				  </div>
 				  <div class="actions">
 				    
