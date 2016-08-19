@@ -1,2 +1,2 @@
-<h1>Static#user</h1>
-<p>Find me in app/views/static/user.html.erb</p>
+<h1>Bienvenido <%= @current_user.name %></h1>
+<%= link_to "Cerrar sesion", logout_path, method: :delete %>

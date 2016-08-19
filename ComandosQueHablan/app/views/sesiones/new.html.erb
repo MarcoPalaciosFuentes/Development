@@ -39,3 +39,46 @@ body  {
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body  {
+    background-image: url("../fotos/atacama_desierto.jpg");
+    background-size: 100% 100%;
+}
+</style>
+</head>
+<body>
+<% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+<% end %>
+
+<div class="container">
+	<div class="col-lg-4">
+		<div class="grey">
+			<h1>Iniciar Sesión</h1>
+			<%= form_for(:session, url: login_path) do |f| %>
+				<div class="field">
+ 					<%= label_tag :Email %><br/>
+ 					<%= f.text_field :email %>
+ 				</div>
+
+ 				<div class="field">
+ 					<%= label_tag :password %><br/>
+ 					<%= f.password_field :password %>
+ 				</div>
+ 				<%= f.check_box :remember_me %>
+ 				<span>Recuerdame</span>
+ 				<div class="actions">
+ 					<%= f.submit "Iniciar Sesión" %>
+ 					<%= link_to 'regresar', root_url, class: 'btn btn-success' %> 
+ 				</div>			
+			<% end %>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

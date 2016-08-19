@@ -51,7 +51,7 @@
 						<label for=""><input type="checkbox">  recordar </label>
 					</div> -->
 					<% if current_usuario %>
-						sesion de <%= current_nombre.usuario %>
+						sesion de <%= current_name %>
 						<%= link_to "Salir", sesione_path("current"), method: "delete" %>
 						<%= link_to "ingresar", new_sesione_path, class: 'btn btn-primary text-center' %>
 					<% else %>
