@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true, email: true
   validates :password, presence: true, length: { minimum: 8 }
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "150x150#" }, default_url: "/public/fotos/missing.jpg"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   has_secure_password
   attr_accessor :remember_token
 
