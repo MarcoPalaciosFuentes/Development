@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  region: MyString
+  name_place: MyString
+  description: MyString
+  weather: MyString
+  environment: MyString
+  activities: MyString
+
+two:
+  region: MyString
+  name_place: MyString
+  description: MyString
+  weather: MyString
+  environment: MyString
+  activities: MyString
