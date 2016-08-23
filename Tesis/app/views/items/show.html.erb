@@ -30,6 +30,13 @@
   <strong>Activities:</strong>
   <%= @item.activities %>
 </p>
+  <strong>Rating</strong>
+  <ul class="rating">
+    <%(1..5).each do |i| %>
+      <li class="rating_star"></li>
+    <% end %>
+  </ul>
+
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
