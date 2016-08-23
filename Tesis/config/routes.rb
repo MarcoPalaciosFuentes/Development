@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'items/show'
   
+  get 'edit' => "user#edit"
+
   get '/crearitem'=> "items#new"
 
   get '/main' => "static#main"
