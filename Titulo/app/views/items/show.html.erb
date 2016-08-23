@@ -1,0 +1,38 @@
+
+<p>
+  <strong>imagen:</strong>
+  <%= image_tag @item.image.url(:medium) %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @item.Place %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @item.region %>
+</p>
+
+<p>
+  <strong>Weather:</strong>
+  <%= @item.weather %>
+</p>
+
+<p>
+  <strong>Environment:</strong>
+  <%= @item.environment %>
+</p>
+
+<p>
+  <strong>Activities:</strong>
+  <%= @item.activities %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
