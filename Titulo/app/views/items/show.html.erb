@@ -2,13 +2,10 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-8">
+      <h1 class="review_title"><%= @item.Place %></h1>  
         <%= image_tag @item.image.url(:medium) %>
-        <div class="tabel-responsive">
+        <div class="table-responsive">
           <table class="table">
-            <tr>
-              <td><strong>Lugar:</strong></td>
-              <td><%= @item.Place %></td> 
-            </tr>
             <tr>
               <td><strong>Description:</strong></td>
               <td><%= @item.description %></td>
@@ -28,13 +25,42 @@
             <tr>
               <td><strong>Activities:</strong></td>
               <td><%= @item.activities %></td>
-            </tr>                                  
-          </table>
+            </tr> 
+
+          </table>              
         </div>
       </div>
-    </div>    
+    </div> 
   </div>
-</div>
-
+  <div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+      <h2>Comentarios</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <tr>
+              <% if @review.blank? %>
+                <h3>No existe un comenario para este lugar, se el primero!</h3>
+                <p><%= link_to "escribe un comentario", new_item_review_path(@item), class: "btn btn-danger" %> </p>
+              <%else%>
+                <% @review.each do |review| %>
+                  <div class="review">
+                    <tr>
+                      <td>
+                        <p><%= review.rating %></p>
+                        <p><%= review.comment %></p>
+                      </td>
+                    </tr>
+                  </div>
+                <% end %>
+              <%end%>
+            </tr> 
+          </table>              
+        </div>
+      </div>
+    </div> 
+  </div>
+<%= link_to 'Dejar comentario', new_item_review_path(@item), class: "btn btn-default"  %>
 <%= link_to 'Editar', edit_item_path(@item) %> |
 <%= link_to 'Volver', items_path %>
