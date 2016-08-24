@@ -1,38 +1,40 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <%= image_tag @item.image.url(:medium) %>
+        <div class="tabel-responsive">
+          <table class="table">
+            <tr>
+              <td><strong>Lugar:</strong></td>
+              <td><%= @item.Place %></td> 
+            </tr>
+            <tr>
+              <td><strong>Description:</strong></td>
+              <td><%= @item.description %></td>
+            </tr>
+            <tr>
+              <td><strong>Region:</strong></td>
+              <td><%= @item.region %></td>
+            </tr>
+            <tr>
+              <td><strong>Weather:</strong></td>
+              <td><%= @item.weather %></td>
+            </tr> 
+            <tr>
+              <td><strong>Environment:</strong></td>
+              <td><%= @item.environment %></td>
+            </tr> 
+            <tr>
+              <td><strong>Activities:</strong></td>
+              <td><%= @item.activities %></td>
+            </tr>                                  
+          </table>
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>
 
-<p>
-  <strong>imagen:</strong>
-  <%= image_tag @item.image.url(:medium) %>
-</p>
-
-<p>
-  <strong>Place:</strong>
-  <%= @item.Place %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<p>
-  <strong>Region:</strong>
-  <%= @item.region %>
-</p>
-
-<p>
-  <strong>Weather:</strong>
-  <%= @item.weather %>
-</p>
-
-<p>
-  <strong>Environment:</strong>
-  <%= @item.environment %>
-</p>
-
-<p>
-  <strong>Activities:</strong>
-  <%= @item.activities %>
-</p>
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Editar', edit_item_path(@item) %> |
+<%= link_to 'Volver', items_path %>

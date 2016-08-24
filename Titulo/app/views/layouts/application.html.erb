@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Titulo</title>
+  <title>Comandos que Hablan</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  	<!--estilos, colores y diseño para la barra de navegacion, los containers y los demas elementos de bootstrap --> 
+	<style> 
+	.grey{
+			background-color: #ccc;
+			padding: 20px;}
+	.navbar-custom {
+		background-color:#1a0000;
+		color:#ffffff;
+		border-radius:0;}
+	.color-texto{
+		color: #ffffff}
+		
+	</style>
 </head>
 <body>
+	<%= render 'layouts/header' %>
+	<div class="container">
 	<p class="notice"><%= notice %></p>
    	<p class="alert"><%= alert %></p>
-
-
-<%= yield %>
-
+		<%= yield %>
+	</div>
 </body>
 </html>
