@@ -4,6 +4,8 @@
       <div class="col-md-8">
       <h1 class="review_title"><%= @item.Place %></h1>  
         <%= image_tag @item.image.url(:medium) %>
+        <p><%= @avg_review %></p>
+        <div class="star-rating" data-score=<%= @avg_review %>>Ranking: </div>
         <div class="table-responsive">
           <table class="table">
             <tr>
@@ -47,10 +49,10 @@
                 <% @review.each do |review| %>
                   <div class="review">
                     <tr>
-                      <td>
-                        <p><%= review.rating %></p>
-                        <p><%= review.comment %></p>
-                      </td>
+                      <div class="reviews">
+                        <div class="star-rating" data-score= <%= review.rating %> ></div>
+                          <p><%= review.comment %></p>
+                      </div>
                     </tr>
                   </div>
                 <% end %>
@@ -64,3 +66,22 @@
 <%= link_to 'Dejar comentario', new_item_review_path(@item), class: "btn btn-default"  %>
 <%= link_to 'Editar', edit_item_path(@item) %> |
 <%= link_to 'Volver', items_path %>
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
+
+<script>
+    $('.avg_review').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
