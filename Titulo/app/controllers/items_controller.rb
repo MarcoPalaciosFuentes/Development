@@ -2,11 +2,22 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /items
-  # GET /items.json
-  def index
+  #busqueda de items
+def index
+  @items = Item.all
+  if params[:search]
+    @items = Item.search(params[:search]).order("created_at DESC")
+  else
     @items = Item.all
   end
+end
+
+
+  # GET /items
+  # GET /items.json
+  #def index
+   # @items = Item.all
+  #end
 
   # GET /items/1
   # GET /items/1.json

@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  helpers:
+    submit:
+      Item:
+        create: "Crear"
+        update: "Modificar"

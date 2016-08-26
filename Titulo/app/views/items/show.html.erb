@@ -43,7 +43,7 @@
           <table class="table">
             <tr>
               <% if @review.blank? %>
-                <h3>No existe un comenario para este lugar, se el primero!</h3>
+                <h3>No existe un comenario para este lugar, ! se el primero !</h3>
                 <p><%= link_to "escribe un comentario", new_item_review_path(@item), class: "btn btn-danger" %> </p>
               <%else%>
                 <% @review.each do |review| %>
