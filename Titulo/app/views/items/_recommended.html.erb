@@ -1,0 +1,30 @@
+<% unrated_items = get_unrated_items(current_user) %>
+
+<h3>Lugares recomendados</h3>
+<ul class=recommended-books>
+  <% unrated_items.each do |item| %>
+    <% if prediction(current_user, item) > 0.5 %>
+  <li>
+    <figure>
+      <figcaption>
+        <strong><%= item.place %></strong>
+      </figcaption>
+    </figure>
+  </li>
+      <% unrated_items.delete(item) %>
+    <% end %>
+  <% end %>
+</ul>
+
+<h3>Otros lugares</h3>
+<ul class=other-books>
+  <% unrated_items.each do |item| %>
+    <li>
+    <figure>
+      <figcaption>
+        <strong><%= item.Place %></strong>
+      </figcaption>
+    </figure>
+    </li>
+  <% end %>
+</ul>

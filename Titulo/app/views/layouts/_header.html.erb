@@ -22,6 +22,7 @@
         <% if user_signed_in? %>
          	<li><%= link_to "Nuevo Item", new_item_path, class: "active" %></li>
          	<li><%= link_to "Perfil", edit_user_registration_path %></li>
+          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </li>
         <% else %>
         	<li><%= link_to "Registrarse", new_user_registration_path, class: "active" %></li>
         	<li><%= link_to "Iniciar sesión", new_user_session_path, class: "active" %></li>
