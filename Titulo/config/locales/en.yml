@@ -23,6 +23,8 @@ en:
   hello: "Hello world"
   helpers:
     submit:
-      Item:
+      item:
         create: "Crear"
         update: "Modificar"
+      review:
+        create: "Dejar Comentario"

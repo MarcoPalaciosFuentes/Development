@@ -9,23 +9,23 @@
         <div class="table-responsive">
           <table class="table">
             <tr>
-              <td><strong>Description:</strong></td>
+              <td><strong>Descripción: </strong></td>
               <td><%= @item.description %></td>
             </tr>
             <tr>
-              <td><strong>Region:</strong></td>
+              <td><strong>Región: </strong></td>
               <td><%= @item.region %></td>
             </tr>
             <tr>
-              <td><strong>Weather:</strong></td>
+              <td><strong>Clima: </strong></td>
               <td><%= @item.weather %></td>
             </tr> 
             <tr>
-              <td><strong>Environment:</strong></td>
+              <td><strong>Tipo de ambiente: </strong></td>
               <td><%= @item.environment %></td>
             </tr> 
             <tr>
-              <td><strong>Activities:</strong></td>
+              <td><strong>Tipo de actividades:</strong></td>
               <td><%= @item.activities %></td>
             </tr> 
 
@@ -64,8 +64,8 @@
     </div> 
   </div>
 <%= link_to 'Dejar comentario', new_item_review_path(@item), class: "btn btn-default"  %>
-<%= link_to 'Editar', edit_item_path(@item) %> |
-<%= link_to 'Volver', items_path %>
+<!--<%= link_to 'Editar', edit_item_path(@item) %> | -->
+<%= link_to 'Volver', items_path, class: "btn btn-default" %>
 <script>
     $('.star-rating').raty({
       path: '/assets/',

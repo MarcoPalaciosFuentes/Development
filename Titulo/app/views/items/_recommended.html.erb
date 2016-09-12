@@ -1,16 +1,19 @@
 <% unrated_items = get_unrated_items(current_user) %>
 
 <h3>Lugares recomendados</h3>
+<%= user_average_rating(current_user) %>
+
 <ul class=recommended-books>
   <% unrated_items.each do |item| %>
     <% if prediction(current_user, item) > 0.5 %>
-  <li>
-    <figure>
-      <figcaption>
-        <strong><%= item.place %></strong>
-      </figcaption>
-    </figure>
-  </li>
+      <li>
+        <figure>
+          <figcaption>
+            <strong><%= item.place %></strong>
+          </figcaption>
+        </figure>
+      </li>
+      <%= link_to (image_tag item.image.url(:thumb), class: 'image'), item %>
       <% unrated_items.delete(item) %>
     <% end %>
   <% end %>
@@ -26,5 +29,6 @@
       </figcaption>
     </figure>
     </li>
+    <%= link_to (image_tag item.image.url(:thumb), class: 'image'), item %>
   <% end %>
 </ul>

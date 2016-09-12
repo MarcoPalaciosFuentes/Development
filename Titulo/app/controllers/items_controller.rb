@@ -47,7 +47,7 @@ end
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item fue creado exitosamente.' }
+        format.html { redirect_to @item, notice: 'Destino fue creado exitosamente.' }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -61,7 +61,7 @@ end
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'Item fue modificado exitosamente.' }
+        format.html { redirect_to @item, notice: 'Destino fue modificado exitosamente.' }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
@@ -75,7 +75,7 @@ end
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item fue eliminado.' }
+      format.html { redirect_to items_url, notice: 'Destino fue eliminado.' }
       format.json { head :no_content }
     end
   end
