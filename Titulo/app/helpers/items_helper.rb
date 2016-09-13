@@ -40,7 +40,7 @@ module ItemsHelper
     users = User.where("id <> :current_user", { current_user: user.id })
 
     users.each do |candidate|
-      neighbours.push(candidate) if similarity(user, candidate) >= 0.5
+      neighbours.push(candidate) if similarity(user, candidate) >= -1
     end
 
     neighbours
