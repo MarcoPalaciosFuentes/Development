@@ -1,11 +1,12 @@
 class Item < ActiveRecord::Base
 	belongs_to :user
 	has_many :reviews
-	has_attached_file :image, styles: { medium: "800x360#", comment: "400x200#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+	has_attached_file :image, styles: { medium: "800x360#", custom: "400x180#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   	def self.search(search)
-  		where("place LIKE ?", "%#{search}%") 
+  		#find(:all, :conditions => ['place ILIKE ?', "%#{search}%"])
+  		where("place ILIKE ?", "%#{search}%") 
   		#where("region LIKE ?", "%#{search}%")
   		#Para dejar la busqueda en PostgreSQL, cambiar LIKE po ILIKE.
 	end

@@ -5,7 +5,7 @@
       <div class="col-md-8">
       <h1 class="review_title"><%= @item.Place %></h1>  
         <%= image_tag @item.image.url(:medium) %>
-        <p><%= @avg_review %></p>
+        <!--<p><%= @avg_review %></p>-->
         <div class="star-rating" data-score=<%= @avg_review %>>Ranking: </div>
         <div class="table-responsive">
           <table class="table">
@@ -44,7 +44,7 @@
           <table class="table">
             <tr>
               <% if @review.blank? %>
-                <h3>No existe un comenario para este lugar, ! se el primero !</h3>
+                <h3>No existe un comenario para este lugar, !se el primero!</h3>
                 <p><%= link_to "escribe un comentario", new_item_review_path(@item), class: "btn btn-danger" %> </p>
               <%else%>
                 <% @review.each do |review| %>
@@ -52,6 +52,7 @@
                     <tr>
                       <div class="reviews">
                         <div class="star-rating" data-score= <%= review.rating %> ></div>
+                          <p><%= review.user.email if review.user %></p>
                           <p><%= review.comment %></p>
                       </div>
                     </tr>
@@ -65,8 +66,10 @@
     </div> 
   </div>
 <%= link_to 'Dejar comentario', new_item_review_path(@item), class: "btn btn-default"  %>
-<!--<%= link_to 'Editar', edit_item_path(@item) %> | -->
+<%= link_to 'Editar', edit_item_path(@item), class: "btn btn-default" %> 
 <%= link_to 'Volver', items_path, class: "btn btn-default" %>
+
+
 <script>
     $('.star-rating').raty({
       path: '/assets/',

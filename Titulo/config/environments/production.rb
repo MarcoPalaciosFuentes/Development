@@ -76,4 +76,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.perform_deliveries = true
+  #config.action_mailer.smtp_settings = {
+   #   :address              => "smtp.sendgrid.net",
+  #    :port                 => 587,
+    #  :domain               => "sendgrid.com",   
+      #:user_name            => ""
+     # :password             => ""
+    #  :authentication       => 'plain',
+   #   :enable_starttls_auto => true  }
+#  #config.action_mailer.default_url_options = { :host => 'http://nameless-waters-82024.herokuapp.com' }
 end

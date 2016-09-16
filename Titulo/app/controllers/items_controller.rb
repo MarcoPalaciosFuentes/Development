@@ -10,7 +10,7 @@ def index
   else
     @items = Item.all
   end
-end
+end 
 
 
   # GET /items

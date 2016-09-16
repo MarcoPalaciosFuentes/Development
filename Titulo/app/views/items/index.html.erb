@@ -1,7 +1,11 @@
 <% if !user_signed_in? %>
   <div class="jumbotron">
-    <h1>¡La Mejor pagina para ver y recomendar lugares turisticos!</h1>
-    <p>Comenta y deja una calificación a cada lugar que visites, ve las recomendaciones de otras personas para ver cual es tu proximo destino turistico.</p>
+    <img style="float:left" src="../fotos/Logo_utem.jpg" id="Utem" class="img-responsive img-rounded pull-rigth"  width="200" height="300">
+    <p> Alumno: Marco Antonio Palacios Fuentes</p>
+    <p> Carrera: Ingeniería Informática  21030</p>
+    <p> Profesor: Santiago Zapata Cáceres</p>
+      <!--<h1>¡La Mejor pagina para ver y recomendar lugares turisticos!</h1>
+      <p>Comenta y deja una calificación a cada lugar que visites, ve las recomendaciones de otras personas para ver cual es tu proximo destino turistico.</p>-->
     <p><%= link_to "Registrate para dejar recomendaciones", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
   </div>
 <% end %>
@@ -10,7 +14,7 @@
   <% @items.each do |item| %>
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
-        <%= link_to (image_tag item.image.url(:medium), class: 'image'), item %>
+        <span><%= link_to (image_tag item.image.url(:medium), class: 'image'), item %></span>
         <td><%= item.Place %></td>
       </div>
     </div>

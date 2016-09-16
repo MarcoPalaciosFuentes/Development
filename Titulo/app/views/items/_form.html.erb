@@ -25,8 +25,11 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
+  <div class="field">
     <%= f.label :Región %><br>
-    <%= f.text_field :region %>
+    <%= f.select :region, ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana de Santiago', 'O  Higgins', 'Maule', 'Bío-Bío', 'La Araucanía', 'Los Ríos', 'Los Lagos', 'Aysén', 'Magallanes']%>
+    <!--<%= f.text_field :region %> -->
+  </div>
   </div>
   <div class="field">
     <%= f.label :Clima %><br>
@@ -34,7 +37,8 @@
   </div>
   <div class="field">
     <%= f.label :Tipo_de_ambiente %><br>
-    <%= f.text_field :environment %>
+    <%= f.select :environment, ['Natural', 'Artificial'] %>
+    <!--<%= f.text_field :environment %>-->
   </div>
   <div class="field">
     <%= f.label :Tipo_de_actividades %><br>
