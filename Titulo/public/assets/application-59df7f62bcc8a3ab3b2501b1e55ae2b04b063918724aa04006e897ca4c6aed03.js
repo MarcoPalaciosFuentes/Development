@@ -14664,7 +14664,7 @@ var o,i,s,a,u;return i=null!=n?n:{},a=i.restorationIdentifier,s=i.restorationDat
     click        : undefined,
     half         : false,
     halfShow     : true,
-    hints        : ['bad', 'poor', 'regular', 'good', 'gorgeous'],
+    hints        : ['Pesimo', 'Malo', 'Regular', 'Bueno', 'Increible'],
     iconRange    : undefined,
     mouseout     : undefined,
     mouseover    : undefined,
