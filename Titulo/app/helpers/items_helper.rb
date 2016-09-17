@@ -7,6 +7,8 @@ module ItemsHelper
 
     review.rating
   end
+
+
 #metodo donde entrega los items que el usuario no a puesto una calificacion
   def get_unrated_items(user)
     items = []
@@ -40,7 +42,7 @@ module ItemsHelper
     users = User.where("id <> :current_user", { current_user: user.id })
 
     users.each do |candidate|
-      neighbours.push(candidate) if similarity(user, candidate) >= -1
+      neighbours.push(candidate) if similarity(user, candidate) >= 0
     end
 
     neighbours

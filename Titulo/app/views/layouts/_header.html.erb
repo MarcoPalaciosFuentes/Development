@@ -15,12 +15,12 @@
       <ul class="nav navbar-nav navbar-left">
         <%= form_tag(items_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Ingrese lugar para buscar", class: 'margen-superior' %>
-          <%= submit_tag "Buscar" %>
+          <%= submit_tag "Buscar", :name => nil %>
         <% end %>     
       </ul>
     	<ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-         	<li><%= link_to "Nuevo Item", new_item_path, class: "active" %></li>
+         	<li><%= link_to "Nuevo Destino", new_item_path, class: "active" %></li>
          	<li><%= link_to "Perfil", edit_user_registration_path %></li>
           <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </li>
         <% else %>

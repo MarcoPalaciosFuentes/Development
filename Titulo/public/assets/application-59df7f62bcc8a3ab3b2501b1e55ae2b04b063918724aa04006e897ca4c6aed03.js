@@ -14668,7 +14668,7 @@ var o,i,s,a,u;return i=null!=n?n:{},a=i.restorationIdentifier,s=i.restorationDat
     iconRange    : undefined,
     mouseout     : undefined,
     mouseover    : undefined,
-    noRatedMsg   : 'Not rated yet!',
+    noRatedMsg   : '¡todavía no calificado!',
     number       : 5,
     numberMax    : 20,
     path         : undefined,
