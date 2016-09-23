@@ -1,5 +1,24 @@
 module ItemsHelper
 #define el metodo que entrega todos los rating del usuario 
+  
+  def get_best_item()
+    best_items = []
+
+    Item.all.each do |item|
+      @review = Review.where(item_id: @item.id).order("created_at DESC")
+      if @item.reviews.blank?
+        @avg_review = 0
+      else
+        @avg_review = @review.average(:rating).round(2)
+        items.push best_items
+      end
+    end
+
+    best_items
+
+  end
+
+
   def user_rating(user)
     review = Review.where(user_id: user.id, item_id: @item.id).first
 
