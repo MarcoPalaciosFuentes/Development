@@ -6,6 +6,7 @@
       <h1 class="review_title"><%= @item.Place %></h1>  
         <%= image_tag @item.image.url(:medium) %>
         <!--<p><%= @avg_review %></p>-->
+        <%= @item.promedio  %>
         <div class="star-rating" data-score=<%= @avg_review %>>Ranking: </div>
         <div class="table-responsive">
           <table class="table">

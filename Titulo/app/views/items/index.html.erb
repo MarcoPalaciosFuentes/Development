@@ -75,16 +75,24 @@
 
 <% if user_signed_in? %>
 
-    <p> Lugares Recomendados para ti</p>
+  <h2 class="text-center">Lugares Recomendados</h2>
+  <span>
+    <div class="row">
+      <% @items.each do |item| %>
+        <%if item.promedio >= 3 %>
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <span><%= link_to (image_tag item.image.url(:medium), class: 'image'), item %></span>
+              <td><%= item.Place %></td>
+            </div>
+          </div>
+        <%end%>
+      <% end %>
+    </div>
+  </span>
 
 
 <% end %>
-
-
-
-
-
-
 
 
 <span>

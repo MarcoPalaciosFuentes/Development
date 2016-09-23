@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
+
   #busqueda de items
 def index
   @items = Item.all
@@ -29,6 +30,7 @@ end
     else
       @avg_review = @review.average(:rating).round(2)
     end
+    @item.update_attribute(:promedio, @avg_review)
   end
 
   # GET /items/new
