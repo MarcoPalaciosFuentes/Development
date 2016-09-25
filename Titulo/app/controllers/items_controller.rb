@@ -90,6 +90,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:Place, :description, :region, :weather, :environment, :activities, :image)
+      params.require(:item).permit(:Place, :description, :region, :weather, :environment, :activities, :image,:latitud, :longitud)
     end
 end
