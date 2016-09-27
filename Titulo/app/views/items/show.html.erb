@@ -4,14 +4,14 @@
     <div class="row">
       <div class="col-md-8">
       <h1 class="review_title"><%= @item.Place %></h1>  
-        <%= image_tag @item.image.url(:medium) %>
+        <div class="img-responsive"> <%= image_tag @item.image.url(:medium) %> </div> 
         <!--<p><%= @avg_review %></p>-->
         <div class="star-rating" data-score=<%= @avg_review %>>Ranking: </div>
         <div class="table-responsive">
           <table class="table">
             <tr>
               <td><strong>Descripción: </strong></td>
-              <td><%= @item.description %></td>
+              <td class="text-justify"><%= @item.description %></td>
             </tr>
             <tr>
               <td><strong>Provincia: </strong></td>
@@ -34,16 +34,28 @@
             </tr>             
           </table> 
 
-          <iframe
+          <!--<iframe
             width="500"
             height="350"
-            frameborder="0"
+            frameborder="1"
             scrolling="no"
+            dir="armada de chile"
             marginheight="0"
             marginwidth="0"
             src="https://maps.google.com/maps?q=<%= @item.latitud %><%= @item.longitud %>&hl=es&z=15&output=embed">
-          </iframe>
-                    
+          </iframe> -->
+          <iframe
+            width="500"
+            height="350"
+            frameborder="1"
+            scrolling="no"
+            dir="armada de chile"
+            marginheight="0"
+            marginwidth="0"
+            src=" https://maps.google.com?q=<%= @item.Place %>&output=embed">
+          </iframe>          
+         
+        
         </div>
       </div>
     </div> 
@@ -57,7 +69,7 @@
           <table class="table">
             <tr>
               <% if @review.blank? %>
-                <h3>No existe un comenario para este lugar, !se el primero!</h3>
+                <h3>No existe un comentario para este lugar, ¡se el primero!</h3>
                 <p><%= link_to "escribe un comentario", new_item_review_path(@item), class: "btn btn-danger" %> </p>
               <%else%>
                 <% @review.each do |review| %>

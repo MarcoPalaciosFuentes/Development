@@ -1,13 +1,14 @@
 <%= javascript_include_tag 'ratyrate.js', "data-turbolinks-track" => false %>
 <div class="jumbotron">
-  <h2 class="text-center"><strong> Sistema de Recomendaciones de Lugares Turisticos de la Region de Valparaiso </strong></h2>
-  <p class="small">Comenta y deja una calificación a cada lugar que visites, ve las recomendaciones de otras personas para ver cual es tu proximo destino turistico.</p>
+  <h2 class="text-center"><strong> Sistema de Recomendaciones de Lugares Turisticos de la Región de Valparaiso </strong></h2>
+  <p class="small">Comenta y deja una calificación a cada lugar que visites, ve las recomendaciones de otras personas para ver cual es tu próximo destino turístico.</p>
 
 <% if !user_signed_in? %>
     <img style="float:left" src="../fotos/Logo_utem.jpg" id="Utem" class="img-responsive img-rounded pull-rigth"  width="200" height="300">
     <p> Alumno: Marco Antonio Palacios Fuentes</p>
     <p> Carrera: Ingeniería Informática  21030</p>
-    <p> Profesor: Santiago Zapata Cáceres</p>
+    <p> Profesor: Santiago Zapata Cáceres Ph.d</p>
+    <p> Año: 2016 V.1.</p>
       <!--<h1>¡La Mejor pagina para ver y recomendar lugares turisticos!</h1>
       <p>Comenta y deja una calificación a cada lugar que visites, ve las recomendaciones de otras personas para ver cual es tu proximo destino turistico.</p>-->
     <p><%= link_to "Registrate para dejar recomendaciones", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
@@ -25,25 +26,13 @@
 
         <div class="carousel-inner">
           <div class="item active">
-            <img src="../fotos/torres.jpg" alt="image" class="img-responsive">
-            <div class="carousel-caption">
-              <h2>Torres del Paine</h2>
-              <p>Región de Magallanes y de la Antártica Chilena</p>
-            </div>
+            <img src="../fotos/valparaiso1.jpg" alt="image" class="img-responsive">
           </div>
           <div class="item">
-            <img src="../fotos/villarica2.jpg" alt="image" class="img-responsive">
-            <div class="carousel-caption">
-              <h2>Volcan de Villarica</h2>
-              <p>Región de Araucanía</p>
-            </div>
+            <img src="../fotos/valparaiso2.jpg" alt="image" class="img-responsive">
           </div>
           <div class="item">
-            <img src="../fotos/antofagasta.jpg" alt="image" class="img-responsive">
-            <div class="carousel-caption">
-              <h2>La Portada</h2>
-              <p>Región de Antofagasta</p>
-            </div>
+            <img src="../fotos/valparaiso3.jpg" alt="image" class="img-responsive">
           </div>
           <a href="#carousel-ex" class="left carousel-control" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left"></span>
@@ -61,17 +50,17 @@
 <span>
     <img style="float:left" src="../fotos/mapa_Valparaiso.png" id="Mapa" class="img-responsive img-rounded pull-rigth"  width="200" height="300">
   
-    <span><h2 class="text-center">Region de Valparaiso</h2></span>
+    <span><h2 class="text-center">Región de Valparaiso</h2></span>
 
-    <p >La V Región de Valparaíso o Región de Valparaíso es una de las quince regiones en las que se encuentra dividido Chile. Limita al norte con la Región de Coquimbo, al este con Argentina, al sureste con la Región Metropolitana, al sur con la Región de O'Higgins y al oeste con el océano Pacífico.</p>
+    <p class="text-justify">La V Región de Valparaíso o Región de Valparaíso es una de las quince regiones en las que se encuentra dividido Chile. Limita al norte con la Región de Coquimbo, al este con Argentina, al sureste con la Región Metropolitana, al sur con la Región de O'Higgins y al oeste con el océano Pacífico.</p>
 
-    <p>Cuenta con una superficie de 16.396,1 km² y una población de 1.825.757 habitantes según el INE, siendo la tercera región más habitada del país.</p> 
+    <p class="text-justify">Cuenta con una superficie de 16.396,1 km² y una población de 1.825.757 habitantes según el INE, siendo la tercera región más habitada del país.</p> 
 
-    <p> La región está compuesta por las provincias de Isla de Pascua, Los Andes, Petorca, Quillota, San Antonio, San Felipe de Aconcagua, Marga Marga y Valparaíso. La capital regional, Valparaíso, es sede del Congreso Nacional de Chile.</p>
+    <p class="text-justify"> La región está compuesta por las provincias de Isla de Pascua, Los Andes, Petorca, Quillota, San Antonio, San Felipe de Aconcagua, Marga Marga y Valparaíso. La capital regional, Valparaíso, es sede del Congreso Nacional de Chile.</p>
 
-    <p>La región incluye, además, los territorios del denominado Chile insular, dentro de los que se encuentran el Archipiélago Juan Fernández, las Islas Desventuradas y las islas polinésicas de Isla de Pascua (o Rapa Nui) y la isla Sala y Gómez.</p>
+    <p class="text-justify">La región incluye, además, los territorios del denominado Chile insular, dentro de los que se encuentran el Archipiélago Juan Fernández, las Islas Desventuradas y las islas polinésicas de Isla de Pascua (o Rapa Nui) y la isla Sala y Gómez.</p>
 
-    <p>Valparaíso cuenta con 8 Provincias, las cuales son : Isla de Pascua, Los Andes, Petorca, Quillota, San Antonio, San Felipe de Aconcagua, Valparaíso, Marga Marga</p>
+    <p class="text-justify">Valparaíso cuenta con 8 Provincias, las cuales son : Isla de Pascua, Los Andes, Petorca, Quillota, San Antonio, San Felipe de Aconcagua, Valparaíso, Marga Marga</p>
 </span>
 </div>
 

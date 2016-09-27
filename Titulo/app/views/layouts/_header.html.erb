@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
         <%= form_tag(items_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Ingrese lugar para buscar", class: 'margen-superior' %>
+          <%= text_field_tag :search, params[:search], placeholder: "Ingrese Destino", class: 'margen-superior' %>
           <%= submit_tag "Buscar", :name => nil %>
         <% end %>     
       </ul>

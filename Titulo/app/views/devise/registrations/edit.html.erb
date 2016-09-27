@@ -33,12 +33,12 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "modificar" %>
+    <%= f.submit "modificar",  class: "btn btn-default"  %>
   </div>
 <% end %>
 <h3>Cancelar mi cuenta</h3>
 
-<p><%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "¿Está seguro?" }, method: :delete %></p>
+<p><%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "¿Está seguro?" }, method: :delete,  class: "btn btn-default"  %>, </p>
 
 <%= link_to "Volver", :back, class: "btn btn-default" %>
 </div>
