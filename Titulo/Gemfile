@@ -40,7 +40,7 @@ gem 'sidekiq', '~> 4.1', '>= 4.1.4'
 gem 'searchkick', '~> 1.3', '>= 1.3.3'
 
 #gema para las recomendaciones
-gem 'recommendable', '~> 2.2'
+#gem 'recommendable', '~> 2.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
