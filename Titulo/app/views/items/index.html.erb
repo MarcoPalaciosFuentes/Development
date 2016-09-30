@@ -1,4 +1,5 @@
 <%= javascript_include_tag 'ratyrate.js', "data-turbolinks-track" => false %>
+
 <div class="jumbotron">
   <h2 class="text-center"><strong> Sistema de Recomendaciones de Lugares Turisticos de la Región de Valparaiso </strong></h2>
   <p class="small">Comenta y deja una calificación a cada lugar que visites, ve las recomendaciones de otras personas para ver cual es tu próximo destino turístico.</p>
@@ -6,8 +7,8 @@
 <% if !user_signed_in? %>
     <img style="float:left" src="../fotos/Logo_utem.jpg" id="Utem" class="img-responsive img-rounded pull-rigth"  width="200" height="300">
     <p> Alumno: Marco Antonio Palacios Fuentes</p>
-    <p> Carrera: Ingeniería Informática  21030</p>
-    <p> Profesor: Santiago Zapata Cáceres Ph.d</p>
+    <p> Carrera: Ingeniería Informática</p>
+    <p> Profesor: Santiago Zapata Cáceres Ph.D</p>
     <p> Año: 2016 V.1.</p>
       <!--<h1>¡La Mejor pagina para ver y recomendar lugares turisticos!</h1>
       <p>Comenta y deja una calificación a cada lugar que visites, ve las recomendaciones de otras personas para ver cual es tu proximo destino turistico.</p>-->
@@ -90,7 +91,9 @@
 <span>
   <h2 class="text-center">Conoce los diferentes lugares que Valparaiso ofrece para ti </h2>
 </span>
-
+<% if @items.blank? %>
+<h4>No se encuentran destinos con la palabra <%= params[:search] %>.</h4>
+<% end %>
 
 <span>
   <div class="row">
