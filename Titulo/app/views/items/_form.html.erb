@@ -30,10 +30,10 @@
     <%= f.select :region, ['Isla de Pascua', 'Los Andes', 'Petorca', 'Quillota', 'San Antonio', 'San Felipe de Aconcagua', 'Valparaíso', 'Marga Marga']%>
   </div>
   </div>
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :Clima %><br>
     <%= f.text_field :weather %>
-  </div>
+  </div>-->
   <div class="field">
     <%= f.label :Tipo_de_ambiente %><br>
     <%= f.select :environment, ['Natural', 'Artificial'] %>
@@ -44,12 +44,9 @@
   </div>
     <div class="field">
     <%= f.label :direccion %><br>
-    <%= f.text_field :latitud %>
+    <%= f.text_field :direccion %>
   </div>
-  <!--<div class="field">
-    <%= f.label :Longitud %><br>
-    <%= f.text_field :longitud %>
-  </div>-->
+  
   <div class="actions",>
     <%= f.button :submit => "", class: "btn btn-default" %>
     <%= link_to 'Volver', items_path, class: "btn btn-default" %>

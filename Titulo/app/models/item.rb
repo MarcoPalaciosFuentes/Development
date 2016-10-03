@@ -6,7 +6,7 @@ class Item < ActiveRecord::Base
 
   	def self.search(search)
   		#find(:all, :conditions => ['place ILIKE ?', "%#{search}%"])
-  		where("place LIKE ? or region LIKE ?", "%#{search}%", "%#{search}%") 
+  		where("place ILIKE ? or region ILIKE ?", "%#{search}%", "%#{search}%") 
       #para postgres utilizar ILIKE
   		#where("region LIKE ?", "%#{search}%")
   		#Para dejar la busqueda en PostgreSQL, cambiar LIKE po ILIKE.

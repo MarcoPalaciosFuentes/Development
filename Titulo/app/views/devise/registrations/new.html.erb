@@ -21,6 +21,26 @@
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 
+    <div class="field">
+      <%= f.label :nombre%><br>
+      <%= f.text_field :nombrep %>
+    </div>
+
+    <div class="field">
+      <%= f.label :apellido%><br>
+      <%= f.text_field  :apellido %>
+    </div>
+
+    <div class="field">
+      <%= f.label :nombre_de_usuario%><br>
+      <%= f.text_field :nombreu %>
+    </div> 
+
+    <div class="field">
+      <%= f.label :permisos%><br />
+      <%= f.check_box :permisos %>
+    </div>   
+
     <div class="actions">
       <%= f.submit "Registrarse" %>
     </div>

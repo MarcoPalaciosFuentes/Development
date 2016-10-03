@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-
+  before_filter :must_be_permisos, only: [:edit, :destroy]
 
   #busqueda de items
 def index
@@ -88,8 +88,14 @@ end
       @item = Item.find(params[:id])
     end
 
+    def must_be_permisos
+      unless current_user && current_user.permisos?
+        redirect_to item_path, notice: "Solo los administradores pueden editar destinos"
+      end
+    end    
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:Place, :description, :region, :weather, :environment, :activities, :image,:latitud, :longitud)
+      params.require(:item).permit(:Place, :description, :region, :weather, :environment, :activities, :image, :direccion)
     end
 end
