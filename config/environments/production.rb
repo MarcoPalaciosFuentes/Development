@@ -99,7 +99,3 @@ Rails.application.configure do
    #   :enable_starttls_auto => true  }
 #  #config.action_mailer.default_url_options = { :host => 'http://nameless-waters-82024.herokuapp.com' }
 end
-#$ heroku config:set S3_BUCKET_NAME=s3-titulo
-#$ heroku config:set AWS_ACCESS_KEY_ID=AKIAJKKYOZU72SEGKSLA
-#$ heroku config:set AWS_SECRET_ACCESS_KEY=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
-#$ heroku config:set AWS_REGION=Oregon
