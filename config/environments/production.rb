@@ -77,14 +77,14 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # guarda las imagenes en el servicio S3 de amazon
+  # config/environments/production.rb
   config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {
-      bucket: ENV.fetch('s3-titulo'),
-      access_key_id: ENV.fetch('AKIAJKKYOZU72SEGKSLA'),
-      secret_access_key: ENV.fetch('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'),
-      s3_region: ENV.fetch('Oregon'),
+      bucket: ENV.fetch('S3_BUCKET_NAME'),
+      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+      s3_region: ENV.fetch('AWS_REGION'),
     }
   }
 
@@ -99,3 +99,7 @@ Rails.application.configure do
    #   :enable_starttls_auto => true  }
 #  #config.action_mailer.default_url_options = { :host => 'http://nameless-waters-82024.herokuapp.com' }
 end
+#$ heroku config:set S3_BUCKET_NAME=s3-titulo
+#$ heroku config:set AWS_ACCESS_KEY_ID=AKIAJKKYOZU72SEGKSLA
+#$ heroku config:set AWS_SECRET_ACCESS_KEY=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
+#$ heroku config:set AWS_REGION=Oregon
