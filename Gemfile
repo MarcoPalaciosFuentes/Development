@@ -65,7 +65,6 @@ group :development do
 end
 #group :production do
 	#base de datos para heroku
-#	gem 'pg'
 #end
 #conexion al servidor de amazon aws
 #ssh -i violinista-key.pem ubuntu@ec2-54-68-162-111.us-west-2.compute.amazonaws.com

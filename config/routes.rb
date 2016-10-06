@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' } 
   resources :items do
     resources :reviews, except: [:show, :index]
+    collection do
+        get :search
+    end
   end
 
   root 'items#index'

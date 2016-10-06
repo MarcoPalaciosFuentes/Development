@@ -1,0 +1,29 @@
+<%= javascript_include_tag 'ratyrate.js', "data-turbolinks-track" => false %>
+
+<div class="jumbotron">
+  <h2 class="text-center"><strong> Sistema de Recomendaciones de Lugares Turisticos de la Región de Valparaiso </strong></h2>
+  <!--<p class="small">Comenta y deja una calificación a cada lugar que visites, ve las recomendaciones de otras personas para ver cual es tu próximo destino turístico.</p>-->
+
+</div>
+
+
+<span>
+  <h2 class="text-center">Resultados</h2>
+</span>
+<% if @items.blank? %>
+<h4>No se encuentran destinos con la palabra <%= params[:search] %>.</h4>
+<% end %>
+
+<span>
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <span><%= link_to (image_tag item.image.url(:medium), class: 'image'), item %></span>
+          <td><%= item.Place %></td>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'Volver', items_path, class: "btn btn-default" %>
+</span>
