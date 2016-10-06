@@ -32,7 +32,7 @@ gem 'devise', '~> 4.2'
 #gema para las imagenes
 gem 'paperclip', '~> 5.1'
 #gema para guardar imagenes en amazon S3
-gem 'aws-sdk', '~> 2.6', '>= 2.6.4'
+gem 'aws-sdk', '< 2.0'
 
 #gema para los css y para el frot end de la pagina
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
