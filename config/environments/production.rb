@@ -77,6 +77,17 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  # guarda las imagenes en el servicio S3 de amazon
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV.fetch('s3-titulo'),
+      access_key_id: ENV.fetch('AKIAJKKYOZU72SEGKSLA'),
+      secret_access_key: ENV.fetch('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'),
+      s3_region: ENV.fetch('Oregon'),
+    }
+  }
+
   config.action_mailer.perform_deliveries = true
   #config.action_mailer.smtp_settings = {
    #   :address              => "smtp.sendgrid.net",
