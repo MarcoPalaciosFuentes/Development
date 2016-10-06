@@ -30,9 +30,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 4.2'
 
 #gema para las imagenes
-gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
+gem 'paperclip'
 #gema para guardar imagenes en amazon S3
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk', '~> 2.3'
 
 #gema para los css y para el frot end de la pagina
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
