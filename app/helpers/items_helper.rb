@@ -61,7 +61,7 @@ module ItemsHelper
     users = User.where("id <> :current_user", { current_user: user.id })
 
     users.each do |candidate|
-      neighbours.push(candidate) if similarity(user, candidate) >= 0.5
+      neighbours.push(candidate) if similarity(user, candidate) >= 0
     end
 
     neighbours
@@ -71,20 +71,15 @@ module ItemsHelper
   # Calculated with Pearson correlation, which goes:
   # from -1 (low similarity) to 1 (high similarity)
   def similarity(user_a, user_b)
-    av_a = user_average_rating(user_a)
-    #rating_b.rating = 0
-    av_b = 0
-    av_b = user_average_rating(user_b)
-    sum_both = 0 
-    sum_a = 0
-    sum_b = 0
+    av_a, av_b = user_average_rating(user_a), user_average_rating(user_b)
+    sum_both, sum_a, sum_b = 0, 0, 0
     rating_a = Review.where(user_id: user_a.id)
 
     rating_a.each do |rating_a|
       if rating_b = Review.where(user_id: user_b.id, item_id: rating_a.item_id).first
         sum_a = sum_a + ( (rating_a.rating - av_a)**2 )
-        sum_b = sum_b + ( (0 - av_b)**2 )
-        sum_both = sum_both + ( (rating_a.rating - av_a) * (rating_b.rating - av_b) )
+        sum_b = sum_b + ( (0- av_b)**2 )
+        sum_both = sum_both + ( (rating_a.rating - av_a) * (0 - av_b) )
       end
     end
 
