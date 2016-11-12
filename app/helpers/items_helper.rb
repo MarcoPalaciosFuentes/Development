@@ -72,7 +72,8 @@ module ItemsHelper
   # from -1 (low similarity) to 1 (high similarity)
   def similarity(user_a, user_b)
     av_a = user_average_rating(user_a)
-    av_b = user_average_rating(user_b)
+    av_b = 0
+    #user_average_rating(user_b)
     sum_both = 0 
     sum_a = 0
     sum_b = 0
