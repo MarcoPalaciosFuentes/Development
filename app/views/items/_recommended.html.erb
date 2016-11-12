@@ -19,11 +19,26 @@
   <% end %>
 </ul>
 -->
+<h3>Otros lugares</h3>
+<ul class=other-items>
+  <% unrated_items.each do |item| %>
+    <%if item.promedio >= 3 %>
+      <li>
+      <figure>
+        <figcaption>
+          <strong><%= item.Place %></strong>
+        </figcaption>
+      </figure>
+      </li>
+      <%= link_to (image_tag item.image.url(:thumb), class: 'image'), item %>
+    <% end %>
+  <% end %>
+</ul>
 
 
 <ul class=recommended-items>
   <% unrated_items.each do |item| %>
-        <%if item.promedio >= 3 %>
+        <
           <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
               <span><%= link_to (image_tag item.image.url(:medium), class: 'image'), item %></span>
