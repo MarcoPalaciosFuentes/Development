@@ -22,7 +22,7 @@ module ItemsHelper
   def user_rating(user)
     review = Review.where(user_id: user.id, item_id: @item.id).first
 
-    return nil if not review
+    return 0 if not review
 
     review.rating
   end
@@ -97,6 +97,7 @@ module ItemsHelper
         upper_sum = upper_sum + ( similarity(user, neighbour) * (neighbour_rating.rating - user_average_rating(neighbour)) )
         bottom_sum = bottom_sum + similarity(user, neighbour)
       end
+
     end
 
     if upper_sum > 0 and bottom_sum > 0
