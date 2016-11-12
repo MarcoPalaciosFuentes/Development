@@ -39372,3 +39372,4 @@ ActionController::RoutingError (No route matches [GET] "/images/:s3-titulo.s3.am
   Rendered /home/red/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
   Rendered /home/red/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
   Rendered /home/red/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (54.5ms)
+  [1m[36mUser Load (90.7ms)[0m  [1mSELECT `users`.* FROM `users`[0m

@@ -61,7 +61,7 @@ module ItemsHelper
     users = User.where("id <> :current_user", { current_user: user.id })
 
     users.each do |candidate|
-      neighbours.push(candidate) if similarity(user, candidate) >= 0
+      neighbours.push(candidate) if similarity(user, candidate) >= 0.5
     end
 
     neighbours
@@ -73,7 +73,7 @@ module ItemsHelper
   def similarity(user_a, user_b)
     av_a = user_average_rating(user_a)
     av_b = 0
-    #user_average_rating(user_b)
+    av_b = user_average_rating(user_b)
     sum_both = 0 
     sum_a = 0
     sum_b = 0
