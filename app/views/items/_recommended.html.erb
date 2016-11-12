@@ -1,8 +1,8 @@
 <% unrated_items = get_unrated_items(current_user) %>
 
 <h3>Lugares recomendados</h3>
-<!--<%= user_average_rating(current_user) %>-->
-
+<%= user_average_rating(current_user) %>
+<!--
 <ul class=recommended-items>
   <% unrated_items.each do |item| %>
     <% if prediction(current_user, item) > 0 %>
@@ -18,6 +18,22 @@
     <% end %>
   <% end %>
 </ul>
+-->
+
+
+<ul class=recommended-items>
+  <% unrated_items.each do |item| %>
+        <%if item.promedio >= 3 %>
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <span><%= link_to (image_tag item.image.url(:medium), class: 'image'), item %></span>
+              <td><%= item.Place %></td>
+            </div>
+          </div>
+        <%end%>
+  <% end %>
+</ul>
+
 
 <h3>Otros lugares</h3>
 <ul class=other-items>
