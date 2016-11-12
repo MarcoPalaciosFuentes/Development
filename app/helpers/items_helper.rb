@@ -94,7 +94,7 @@ module ItemsHelper
 
     neighbours.each_with_index do |neighbour, i|
       if neighbour_rating = Review.where(user_id: neighbour.id, item_id: item.id).first
-        upper_sum = upper_sum + ( similarity(user, neighbour) * (neighbour_rating.score - user_average_rating(neighbour)) )
+        upper_sum = upper_sum + ( similarity(user, neighbour) * (neighbour_rating.rating - user_average_rating(neighbour)) )
         bottom_sum = bottom_sum + similarity(user, neighbour)
       end
     end
