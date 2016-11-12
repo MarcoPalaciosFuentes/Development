@@ -91,6 +91,7 @@ Rails.application.configure do
   }
 
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: 'http://polar-anchorage-85759.herokuapp.com'}
   #config.action_mailer.smtp_settings = {
    #   :address              => "smtp.sendgrid.net",
   #    :port                 => 587,
@@ -99,5 +100,6 @@ Rails.application.configure do
      # :password             => ""
     #  :authentication       => 'plain',
    #   :enable_starttls_auto => true  }
-#  #config.action_mailer.default_url_options = { :host => 'http://nameless-waters-82024.herokuapp.com' }
+#  #config.action_mailer.default_url_options = { :host => 'http://nameless-waters-82024.herokuapp.com'}
+#config.action_mailer.default_url_options = { :host => 'http://polar-anchorage-85759.herokuapp.com'}
 end
