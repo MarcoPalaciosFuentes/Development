@@ -48,7 +48,7 @@ end
     unless @item.reviews.present?
      @avg_review = 0
     else
-     @avg_review = @reviews.average(:rating).present? ? @reviews.average(:rating).round(2) : 0
+     @avg_review = @review.average(:rating).present? ? @review.average(:rating).round(2) : 0
     end
     @item.update_attribute(:promedio, @avg_review)
   end
