@@ -22,7 +22,7 @@ module ItemsHelper
   def user_rating(user)
     review = Review.where(user_id: user.id, item_id: @item.id).first
 
-    return 0 if not review
+    return nil if not review
 
     review.rating
   end
@@ -78,8 +78,8 @@ module ItemsHelper
     rating_a.each do |rating_a|
       if rating_b = Review.where(user_id: user_b.id, item_id: rating_a.item_id).first
         sum_a = sum_a + ( (rating_a.rating - av_a)**2 )
-        sum_b = sum_b + ( (0- av_b)**2 )
-        sum_both = sum_both + ( (rating_a.rating - av_a) * (0 - av_b) )
+        sum_b = sum_b + ( (rating_b.rating- av_b)**2 )
+        sum_both = sum_both + ( (rating_a.rating - av_a) * (rating_b.rating - av_b) )
       end
     end
 
