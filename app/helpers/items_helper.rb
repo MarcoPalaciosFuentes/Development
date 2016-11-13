@@ -73,7 +73,7 @@ module ItemsHelper
   def similarity(user_a, user_b)
     av_a, av_b = user_average_rating(user_a), user_average_rating(user_b)
     sum_both, sum_a, sum_b = 0, 0, 0
-    rating_b.rating = 0
+
     rating_a = Review.where(user_id: user_a.id)
 
     rating_a.each do |rating_a|
