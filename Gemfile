@@ -43,6 +43,7 @@ gem 'searchkick', '~> 1.3', '>= 1.3.3'
 
 #gema para los errores y para realizar debug
 gem "better_errors"
+gem "binding_of_caller"
 
 #gema para las recomendaciones
 #gem 'recommendable', '~> 2.2'
