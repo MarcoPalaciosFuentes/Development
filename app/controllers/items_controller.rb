@@ -46,7 +46,7 @@ end
 
   def show
     review = Review.where(item_id: @item.id).order("created_at DESC")
-    unless @itemreviews.present?
+    unless @item.reviews.present?
      @avg_review = 0
     else
      @avg_review = @reviews.average(:rating).present? ? @reviews.average(:rating).round(2) : 0
@@ -117,6 +117,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:Place, :description, :region, :weather, :environment, :activities, :image, :direccion)
+      params.require(:item).permit(:Place, :description, :region, :weather, :environment, :activities, :image, :direccion, :promedio)
     end
 end
