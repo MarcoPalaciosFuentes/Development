@@ -41,6 +41,9 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'sidekiq', '~> 4.1', '>= 4.1.4'
 gem 'searchkick', '~> 1.3', '>= 1.3.3'
 
+#gema para los errores y para realizar debug
+gem "better_errors"
+
 #gema para las recomendaciones
 #gem 'recommendable', '~> 2.2'
 
@@ -64,6 +67,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
 end
 #group :production do
 	#base de datos para heroku

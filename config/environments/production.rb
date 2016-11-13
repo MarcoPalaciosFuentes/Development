@@ -102,4 +102,24 @@ Rails.application.configure do
    #   :enable_starttls_auto => true  }
 #  #config.action_mailer.default_url_options = { :host => 'http://nameless-waters-82024.herokuapp.com'}
 
+
+#recomendador
+
+#<ul class=recommended-items>
+#  <% unrated_items.each do |item| %>
+#    <% if prediction(current_user, item) > 0 %>
+#      <li>
+#        <figure>
+#          <figcaption>
+#            <strong><%= item.place %></strong>
+#          </figcaption>
+#        </figure>
+#      </li>
+#      <%= link_to (image_tag item.image.url(:thumb), class: 'image'), item %>
+#      <% unrated_items.delete(item) %>
+#    <% end %>
+#  <% end %>
+#</ul>
+
+
 end
