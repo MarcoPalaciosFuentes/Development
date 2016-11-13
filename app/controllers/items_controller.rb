@@ -31,13 +31,25 @@ end
 
   # GET /items/1
   # GET /items/1.json
-  def show
-    @review = Review.where(item_id: @item.id).order("created_at DESC")
 
-    if @item.reviews.blank?
-      @avg_review = 0
+#metodo 1
+ # def show
+  #  @review = Review.where(item_id: @item.id).order("created_at DESC")
+
+   # if @item.reviews.blank?
+   #   @avg_review = 0
+   # else
+      #@avg_review = @review.average(:rating).round(2)
+   # end
+    #@item.update_attribute(:promedio, @avg_review)
+  #end
+
+  def show
+    review = Review.where(item_id: @item.id).order("created_at DESC")
+    unless @itemreviews.present?
+     @avg_review = 0
     else
-      @avg_review = @review.average(:rating).round(2)
+     @avg_review = @reviews.average(:rating).present? ? @reviews.average(:rating).round(2) : 0
     end
     @item.update_attribute(:promedio, @avg_review)
   end
