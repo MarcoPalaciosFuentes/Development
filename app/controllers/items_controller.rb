@@ -33,26 +33,25 @@ end
   # GET /items/1.json
 
 #metodo 1
- # def show
-  #  @review = Review.where(item_id: @item.id).order("created_at DESC")
-
-   # if @item.reviews.blank?
-   #   @avg_review = 0
-   # else
-      #@avg_review = @review.average(:rating).round(2)
-   # end
-    #@item.update_attribute(:promedio, @avg_review)
-  #end
-
   def show
-    review = Review.where(item_id: @item.id).order("created_at DESC")
-    unless @item.reviews.present?
-     @avg_review = 0
+   @review = Review.where(item_id: @item.id).order("created_at DESC")
+    if @item.reviews.blank?
+      @avg_review = 0
     else
-     @avg_review = @reviews.average(:rating).present? ? @reviews.average(:rating).round(2) : 0
+      @avg_review = @review.average(:rating).round(2)
     end
     @item.update_attribute(:promedio, @avg_review)
   end
+
+#  def show
+    #review = Review.where(item_id: @item.id).order("created_at DESC")
+    #unless @itemreviews.present?
+    # @avg_review = 0
+    #else
+    # @avg_review = @reviews.average(:rating).present? ? @reviews.average(:rating).round(2) : 0
+    #end
+   # @item.update_attribute(:promedio, @avg_review)
+  #end
 
   # GET /items/new
   def new
@@ -117,6 +116,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:Place, :description, :region, :weather, :environment, :activities, :image, :direccion, :promedio)
+      params.require(:item).permit(:Place, :description, :region, :weather, :environment, :activities, :image, :direccion)
     end
 end
